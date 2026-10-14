@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ibbu Ansari - The Legendary Service Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Hero Announcement Block -->
+    <header class="hero-container">
+        <div class="floating-badge">🚨 Deshmukh Honda Ka Real Boss 🚨</div>
+        <h1 class="main-title">Ebrahim Ansari</h1>
+        <p class="nickname">But Duniya isse <span class="highlight">IBBU ANSARI</span> ke naam se janti hai!</p>
+        
+        <div class="shayari-card">
+            <p class="shayari">"Engine se jab aane lage ajeeb-o-gareeb awaaz,<br>
+            Mistry bhi khada ho jaye jod kar apne haath...<br>
+            Tab entry hoti hai Ibbu Bhai ki jaan-e-baag,<br>
+            Kyuki **Ibbu Ansari hai to problem bhi hai, aur uska ilaaj bhi!**"</p>
+        </div>
+    </header>
+
+    <!-- Main Content Grid -->
+    <main class="dashboard-wrapper">
+        
+        <!-- Superpowers Section -->
+        <section class="grid-section">
+            <h2 class="section-title">🔧 Ibbu Ki Ultimate Superpowers</h2>
+            <div class="cards-layout">
+                <div class="feature-card">
+                    <div class="card-icon">👵🏽</div>
+                    <h3>Auntie Calm-Down Engine</h3>
+                    <p>Un gusse wali Aunties ko shaant karna jinki Activa se 0.002 microsecond ki squeaking noise aa rahi ho. Ibbu just smiles and says: *"Auntie, oil change hoga, sab sahi ho jayega!"*</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="card-icon">📦</div>
+                    <h3>The Stock-Out Wizard</h3>
+                    <p>Customer kitna bhi emergency mein ho, Ibbu can say *"Sir, part stock mein nahi hai, 4 din lagenge"* with such pure innocence ki customer khud bolta hai, *"Koi baat nahi bhai, main paidal chala jaunga."*</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="card-icon">🤝</div>
+                    <h3>Partner In Crime</h3>
+                    <p>Mechanics ke sath aisi dosti hai ki agar manager dekh le toh soche ki workshop Ibbu chala raha hai ya mechanics Ibbu ko chala rahe hain! Direct backend connection.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Dark Secret Section -->
+        <section class="secret-banner">
+            <h2 class="alert-title">⚠️ Top Secret: Crime Scene Exposed ⚠️</h2>
+            <p class="secret-text">Kaam karte hain **Deshmukh Honda** mein... Din raat Honda ki tareefon ke pool baandhte hain... LEKIN! Jab khud ghar nikalte hain, toh **Ajinkya Honda** ki gaadi pe baith ke furr ho jaate hain! *Hypocrisy ki bhi seema hoti hai, Ibbu Bhai!* 😂</p>
+        </section>
+
+        <!-- Interactive Troubleshooting Engine (JavaScript Driven) -->
+        <section class="todo-container">
+            <div class="todo-header">
+                <h2>🛠️ Ibbu's Instant Fault Finder</h2>
+                <p>Gaadi mein koi bhi lafda ho? Neeche apni problem type karo aur Ibbu Bhai ka automatic solution pao!</p>
+            </div>
+
+            <div class="todo-form">
+                <input type="text" id="problem-input" placeholder="E.g., Activa start nahi ho rahi, mileage kam hai...">
+                <button id="diagnose-btn" class="primary-btn">Ask Ibbu</button>
+            </div>
+
+            <div id="solution-box" class="solution-display" style="display: none;">
+                <p class="solution-label">💬 Ibbu Says:</p>
+                <p id="solution-text" class="solution-content"></p>
+            </div>
+        </section>
+
+        <!-- Ultimate Mega Shayari Section -->
+        <section class="mega-shayari-section">
+            <div class="section-header-center">
+                <h2>📜 Ibbu Ke Naam Ek आख़िरी पैगाम</h2>
+            </div>
+            <div class="big-shayari-box">
+                <p>"Honda ki service ka tu hi hai sartaaj,<br>
+                Har bezaar mechanic pe hai tera hi raaj.<br>
+                Ajinkya ki gaadi chalana chod de mere bhai,<br>
+                Varna Deshmukh ji ne dekh liya toh bohot hogi pitai!<br>
+                Par kuch bhi kaho, tere bina showroom hai adhura,<br>
+                Tu khada rahe toh har kaam ho jata hai poora!"</p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer System -->
+    <footer class="main-footer">
+        <p>Made with ❤️ and extreme roasting capability by his Best Friends. Happy Birthday / Surprise Ibbu Bhai! 🎂</p>
+    </footer>
+
+    <!-- Interactive Script System -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const problemInput = document.getElementById('problem-input');
+            const diagnoseBtn = document.getElementById('diagnose-btn');
+            const solutionBox = document.getElementById('solution-box');
+            const solutionText = document.getElementById('solution-text');
+
+            const ibbuReplies = [
+                "Bhai, aankh band karke pehle Engine Oil change karo! Honda ka niyam hai yeh.",
+                "Sir, simple lafda hai. Part stock mein nahi hai, Ajinkya Honda se chura ke laata hu ruko!",
+                "Auntie ko bolo fan-belt mein thoda paani daal dein, squeak-squeak band ho jayega.",
+                "Dekho, jab tak main hu, tab tak chalegi. **Ibbu Ansari hai to problem bhi hai!** Chalao chup-chaap.",
+                "Iska solution mere paas nahi, mere workshop ke mechanics ke paas hai. Chalo unke sath chai peene chalte hain."
+            ];
+
+            diagnoseBtn.addEventListener('click', () => {
+                const text = problemInput.value.trim();
+                if (!text) {
+                    alert("Pehle problem toh likh mere bhai!");
+                    return;
+                }
+                
+                // Random reply generator
+                const randomReply = ibbuReplies[Math.floor(Math.random() * ibbuReplies.length)];
+                solutionText.innerHTML = `"${randomReply}"`;
+                solutionBox.style.display = 'block';
+                solutionBox.classList.add('animate-fade-in');
+            });
+        });
+    </script>
+</body>
+</html>

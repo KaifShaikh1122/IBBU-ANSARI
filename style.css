@@ -1,0 +1,217 @@
+/* -------------------------------------------------------------
+   1. COLOR ARCHITECTURE & COMPONENT VARIABLE SYSTEM
+------------------------------------------------------------- */
+:root {
+    --bg-main: #0a0e17;
+    --bg-surface: #121824;
+    --bg-element: #1c2436;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --accent: #dc2626; /* Honda Red */
+    --accent-gold: #eab308; /* Golden Premium Highlights */
+    --border: #223047;
+    --shadow: 0 10px 25px -5px rgba(220, 38, 38, 0.15);
+    --curve: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* -------------------------------------------------------------
+   2. REFINED GLOBAL LAYOUT RESETS
+------------------------------------------------------------- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    line-height: 1.6;
+    padding-bottom: 4rem;
+}
+
+/* -------------------------------------------------------------
+   3. HERO BANNER ARCHITECTURE WITH FLOATING ANIMATIONS
+------------------------------------------------------------- */
+.hero-container {
+    text-align: center;
+    padding: 5rem 1.5rem 3rem 1.5rem;
+    background: linear-gradient(180deg, #1e1b4b 0%, var(--bg-main) 100%);
+    position: relative;
+    border-bottom: 2px dashed var(--border);
+}
+
+.floating-badge {
+    display: inline-block;
+    background-color: var(--accent);
+    color: white;
+    padding: 0.5rem 1.25rem;
+    font-size: 0.85rem;
+    font-weight: 800;
+    border-radius: 9999px;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    animation: bounce 2s infinite ease-in-out;
+}
+
+.main-title {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 900;
+    letter-spacing: -0.04em;
+    color: var(--text-main);
+}
+
+.nickname {
+    font-size: 1.25rem;
+    color: var(--text-muted);
+    margin-top: 0.5rem;
+}
+
+.highlight {
+    color: var(--accent-gold);
+    font-weight: 800;
+    border-bottom: 3px double var(--accent);
+}
+
+/* Shayari Boxes Layout */
+.shayari-card {
+    max-width: 700px;
+    margin: 2.5rem auto 0 auto;
+    background-color: var(--bg-surface);
+    border: 2px solid var(--accent-gold);
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    transform: rotate(-1deg);
+    transition: transform 0.3s var(--curve);
+}
+.shayari-card:hover { transform: rotate(0deg) scale(1.02); }
+
+.shayari {
+    font-style: italic;
+    font-size: 1.15rem;
+    color: #e2e8f0;
+    font-weight: 500;
+}
+
+/* -------------------------------------------------------------
+   4. GRID ARCHITECTURES AND FEATURE PANELS
+------------------------------------------------------------- */
+.dashboard-wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+}
+
+.section-title {
+    font-size: 1.75rem;
+    font-weight: 800;
+    margin-bottom: 2rem;
+    border-left: 5px solid var(--accent-gold);
+    padding-left: 0.75rem;
+}
+
+.cards-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+}
+
+.feature-card {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border);
+    padding: 2rem;
+    border-radius: 12px;
+    transition: all 0.3s var(--curve);
+}
+.feature-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--accent);
+    box-shadow: var(--shadow);
+}
+
+.card-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+.feature-card h3 { font-size: 1.25rem; margin-bottom: 0.75rem; color: var(--accent-gold); }
+.feature-card p { color: var(--text-muted); font-size: 0.95rem; }
+
+/* -------------------------------------------------------------
+   5. COMPONENT ELEMENT: EXPOSING THE CRIME BANNER
+------------------------------------------------------------- */
+.secret-banner {
+    background: linear-gradient(90deg, #7f1d1d 0%, #450a0a 100%);
+    border: 2px dashed #f87171;
+    padding: 2.5rem;
+    border-radius: 16px;
+    margin-bottom: 4rem;
+    text-align: center;
+}
+
+.alert-title { font-size: 1.5rem; font-weight: 900; color: #fca5a5; margin-bottom: 1rem; text-transform: uppercase; }
+.secret-text { font-size: 1.1rem; color: #fee2e2; max-width: 850px; margin: 0 auto; }
+
+/* -------------------------------------------------------------
+   6. JAVASCRIPT STATE ENGINE BOX: DYNAMIC FAULT ENGINE
+------------------------------------------------------------- */
+.todo-container {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 2.5rem;
+    max-width: 700px;
+    margin: 0 auto 4rem auto;
+    box-shadow: 0 20px 25px -5px rgba(0,0,0,0.3);
+}
+
+.todo-header h2 { font-size: 1.5rem; margin-bottom: 0.25rem; color: var(--text-main); }
+.todo-header p { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.5rem; }
+
+.todo-form { display: flex; gap: 0.75rem; }
+.todo-form input {
+    flex: 1; padding: 0.85rem 1.25rem; border-radius: 10px; border: 1px solid var(--border);
+    background-color: var(--bg-main); color: var(--text-main); font-size: 0.95rem;
+}
+.todo-form input:focus { outline: none; border-color: var(--accent-gold); }
+
+.primary-btn {
+    background-color: var(--accent); color: white; border: none; padding: 0.85rem 1.5rem;
+    border-radius: 10px; font-weight: 700; cursor: pointer; transition: opacity 0.2s;
+}
+.primary-btn:hover { opacity: 0.9; }
+
+.solution-display {
+    margin-top: 1.5rem;
+    background-color: var(--bg-element);
+    border-left: 4px solid var(--accent-gold);
+    padding: 1.25rem;
+    border-radius: 8px;
+}
+.solution-label { font-size: 0.8rem; font-weight: 800; color: var(--accent-gold); text-transform: uppercase; }
+.solution-content { font-size: 1.1rem; font-weight: 600; color: var(--text-main); margin-top: 0.25rem; }
+
+/* Big Final Shayari Block */
+.mega-shayari-section {
+    text-align: center;
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 3rem 1.5rem;
+    margin-top: 2rem;
+}
+.section-header-center h2 { font-size: 1.6rem; color: var(--accent-gold); margin-bottom: 1.5rem; }
+.big-shayari-box { font-size: 1.25rem; line-height: 2; color: #cbd5e1; font-weight: 500; white-space: pre-line; }
+
+/* -------------------------------------------------------------
+   7. CORE PERFORMANCE ANIMATION TRACKS
+------------------------------------------------------------- */
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in { animation: fadeInUp 0.5s var(--curve) forwards; }
+
+.main-footer { text-align: center; padding: 2rem; color: var(--text-muted); font-size: 0.85rem; border-top: 1px solid var(--border); }
